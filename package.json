@@ -1,0 +1,28 @@
+{
+  "name": "nodeexpressgraphql",
+  "version": "1.0.0",
+  "description": "Practice for express, node, and graphQL APIs",
+  "main": "server",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server",
+    "createSchema": "cd scripts && node createSchema.js && cd ..",
+    "seedDB": "cd scripts && node seedTables.js && cd .."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oitowl7/nodeExpressGraphQL.git"
+  },
+  "author": "Jordan Shear",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oitowl7/nodeExpressGraphQL/issues"
+  },
+  "homepage": "https://github.com/oitowl7/nodeExpressGraphQL#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "graphql": "^14.0.2",
+    "mysql": "^2.16.0"
+  }
+}
