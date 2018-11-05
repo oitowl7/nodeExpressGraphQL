@@ -10,7 +10,7 @@ This is a simple full stack app using Node and Express with graphQL on the back 
 
 # To Initialize
 
-First, navigate to the folder you want your project in. It is designed to run on the localhost. Once there type `git clone git@github.com:oitowl7/nodeExpressGraphQL.git`
+First, navigate to the folder you want your project in. It is designed to run on the localhost. Once there type `git clone git@github.com:oitowl7/nodeExpressGraphQL.git` and `cd` into that directory.
 
 This app is designed to use MYSQL with the **root** user, a password of **password**, at **localhost:3306**, with a database name of `graphQLExercise`. 
 
