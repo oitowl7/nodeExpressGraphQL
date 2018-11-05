@@ -30,7 +30,7 @@ Whenever the server is spun up, the tables will be seeded or re-seeded automatic
 
 # The App
 
-The app has a very simple ui. There are only 2 buttons.
+The app has a very simple ui. The ui was designed using the `Semantic UI` package. It has a lot of simple components that I've used on past projects. There are only 2 buttons.
 
 ![alt text](https://imgur.com/Jexq1N3.png "Nothing")
 
