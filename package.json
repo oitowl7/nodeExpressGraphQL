@@ -1,28 +1,36 @@
 {
-  "name": "nodeexpressgraphql",
+  "name": "graphqlpractice",
   "version": "1.0.0",
-  "description": "Practice for express, node, and graphQL APIs",
-  "main": "server",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server",
-    "createSchema": "cd scripts && node createSchema.js && cd ..",
-    "seedDB": "cd scripts && node seedTables.js && cd .."
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"yarn run client\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/oitowl7/nodeExpressGraphQL.git"
-  },
-  "author": "Jordan Shear",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/oitowl7/nodeExpressGraphQL/issues"
-  },
-  "homepage": "https://github.com/oitowl7/nodeExpressGraphQL#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "apollo-client": "^2.4.5",
+    "babel-preset-node5": "^12.0.1",
     "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "faker": "^4.1.0",
+    "graphiql": "^0.12.0",
     "graphql": "^14.0.2",
-    "mysql": "^2.16.0"
+    "graphql-tag": "^2.10.0",
+    "lodash": "^4.17.11",
+    "mysql2": "^1.6.1",
+    "pg": "^7.6.0",
+    "pg-hstore": "^2.3.2",
+    "react": "^16.6.0",
+    "react-apollo": "^2.2.4",
+    "react-dom": "^16.6.0",
+    "sequelize": "^4.41.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.11.0"
   }
 }

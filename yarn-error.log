@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Jordan\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js init
+  C:\Program Files\nodejs\node.exe C:\Users\Jordan\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js client
 
 PATH: 
-  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Jordan\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MongoDB\Server\3.6\bin;C:\WINDOWS\System32\OpenSSH;C:\Program Files\SourceGear\Common\DiffMerge;C:\Program Files\Microsoft VS Code\bin;C:\Users\Jordan\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Jordan\AppData\Roaming\npm
+  C:\Users\Jordan\AppData\Roaming\npm\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;C:\Users\Jordan\Desktop\code\project\graphqlpractice\node_modules\.bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Jordan\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MongoDB\Server\3.6\bin;C:\WINDOWS\System32\OpenSSH;C:\Program Files\SourceGear\Common\DiffMerge;C:\Program Files\Microsoft VS Code\bin;C:\Users\Jordan\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\Users\Jordan\AppData\Roaming\npm
 
 Yarn version: 
   1.5.1
@@ -14,7 +14,38 @@ Platform:
   win32 x64
 
 npm manifest: 
-  
+  {
+    "name": "graphqlpractice",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "client": "cd client && yarn start",
+      "server": "nodemon server.js",
+      "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "babel-preset-node5": "^12.0.1",
+      "express": "^4.16.4",
+      "express-graphql": "^0.7.1",
+      "faker": "^4.1.0",
+      "graphiql": "^0.12.0",
+      "graphql": "^14.0.2",
+      "lodash": "^4.17.11",
+      "mysql2": "^1.6.1",
+      "pg": "^7.6.0",
+      "pg-hstore": "^2.3.2",
+      "react": "^16.6.0",
+      "react-dom": "^16.6.0",
+      "sequelize": "^4.41.0"
+    },
+    "devDependencies": {
+      "concurrently": "^4.0.1"
+    }
+  }
 
 yarn manifest: 
   No manifest
@@ -23,10 +54,17 @@ Lockfile:
   No lockfile
 
 Trace: 
-  SyntaxError: C:\Users\Jordan\Desktop\code\Project\GraphQL\nodeExpressGraphQL\package.json: Unexpected end of JSON input
-      at JSON.parse (<anonymous>)
-      at C:\Users\Jordan\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1036:59
-      at Generator.next (<anonymous>)
-      at step (C:\Users\Jordan\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:98:30)
-      at C:\Users\Jordan\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:109:13
-      at <anonymous>
+  Error: Command failed.
+  Exit code: 1
+  Command: C:\WINDOWS\system32\cmd.exe
+  Arguments: /d /s /c cd client && yarn start
+  Directory: C:\Users\Jordan\Desktop\code\project\graphqlpractice
+  Output:
+  
+      at ProcessTermError.MessageError (C:\Users\Jordan\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
+      at new ProcessTermError (C:\Users\Jordan\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (C:\Users\Jordan\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

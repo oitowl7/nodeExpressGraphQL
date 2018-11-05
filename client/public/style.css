@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('../../fonts/DiplomataSC-Regular.ttf')
+}
+
+
+body {
+  font-family: "MyWebFont";
+}
