@@ -42,6 +42,10 @@ Button 2 is to retrieve all posts and comments and display them on screen if the
 
 ![alt text](https://imgur.com/MoDTGsy.png "Posts")
 
+If you would like to query the data using GraphiQL, you can go to `http://localhost:5000/graphql` which has enabled GraphiQL to query any data in any way you would like.
+
+![alt text](https://imgur.com/mm2oceH.png "GraphiQL")
+
 
 # Conclusion
 
