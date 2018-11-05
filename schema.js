@@ -8,6 +8,7 @@ const {
 } = require("graphql");
 const Db = require("./db.js");
 
+//new user model
 const User = new GraphQLObjectType({
   name: 'User',
   description: 'This represents a user',
@@ -71,11 +72,18 @@ const Post = new GraphQLObjectType({
         resolve(post) {
           return post.getComent();
         }
+      },
+      comentId: {
+        type: GraphQLInt,
+        resolve(post) {
+          return post.getComent().id;
+        }
       }
     }
   }
 });
 
+//note that coment is used in the back end code instead of comment. Comment was not used due to potential confusion with sequelize/sql but on the front end "comment" is used 
 const Coment = new GraphQLObjectType({
   name: 'Coment',
   description: "This is a Coment",
@@ -104,35 +112,6 @@ const Coment = new GraphQLObjectType({
   }
 });
 
-
-
-// const Coment = new GraphQLObjectType({
-//   name: "Coment",
-//   description: "Coment made by user on a post",
-
-//   fields: () => {
-//     return {
-//       coment: {
-//         type: GraphQLString,
-//         resolve(coment) {
-//           coment.coment
-//         }
-//       },
-//       userId: {
-//         type: User,
-//         resolve(coment) {
-//           return coment.getUser();
-//         }
-//       },
-//       postId: {
-//         type: Post,
-//         resolve(coment) {
-//           return coment.getPost();
-//         }
-//       }
-//     }
-//   }
-// })
 
 const Query = new GraphQLObjectType({
   name: "Query",
@@ -170,6 +149,7 @@ const Query = new GraphQLObjectType({
   }
 });
 
+//mutation, needs some tidying up and fields to be changed but in essence works. 
 // const Mutation = new GraphQLObjectType({
 //   name: "Mutation",
 //   description: "This is a mutation",

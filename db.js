@@ -2,10 +2,11 @@ const Sequelize =  require('sequelize');
 const _ = require('lodash');
 const Faker = require('faker');
 
+const database = "graphQLExercise"
 
 const Conn = new Sequelize(
   //database name
-  "relay",
+  database,
   //user
   "root",
   //password
@@ -57,6 +58,7 @@ Post.belongsTo(User);
 Coment.belongsTo(Post);
 Coment.belongsTo(User);
 
+//this will run each time the back end server reinitializes and will seed the coments, post, and user tables. 
 Conn.sync({force: true}).then(()=>{
   _.times(10, () => {
     return User.create({
@@ -64,12 +66,13 @@ Conn.sync({force: true}).then(()=>{
       email: Faker.internet.email()
     }).then(user => {
       return user.createPost({
-        title: `Sample title by ${user.name}`
+        title: Faker.lorem.words()
       })
     }).then(post => {
       return post.createComent({
         coment: Faker.lorem.words(),
-        userId: Faker.random.number({min: 1, max: 10})
+        userId: Faker.random.number({min: 1, max: 10}),
+        postId: Faker.random.number({min: 1, max: 10})
       })
     })
   })

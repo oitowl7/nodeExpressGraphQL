@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const https = require('https');
 const fs = require('fs');
 const path = require("path");
-
 const Schema = require("./schema.js");
 
 //config
@@ -23,21 +22,12 @@ const router = express.Router();
 app.use(express.static("public"));
 app.use(express.static("client/build"));
 
+//test enpoint to make sure front and back ends are talking
 app.get('/test', (req, res) => {
-  // console.log("This is getting hit");
-  res.send("This shit got hit");
+  res.send("This got hit");
 })
 
-// app.get('/graphql', GraphHTTP({
-//   schema: Schema,
-//   graphiql: true
-// }));
-
-// app.post('/graphql', GraphHTTP({
-//   schema: Schema,
-//   graphiql: false
-// }));
-
+//graphql endpoint
 app.use('/graphql', GraphHTTP({
   schema: Schema,
   pretty: true,
@@ -46,7 +36,7 @@ app.use('/graphql', GraphHTTP({
 
 app.get("*", (req, res) => res.sendFile(path.join(__dirname, "client/build/index.html")));
 
-
+//server listener
 app.listen(APP_PORT, ()=>{
   console.log("App listening on port " + APP_PORT);
 })
